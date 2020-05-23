@@ -539,6 +539,9 @@ function _invoke(body, then) {
           this.$emit('blur', e);
         } else if (e && e.isTrusted && !this.isTabbed) {
           this.isFalseFocus = true;
+          setTimeout(function () {	
+            _this7.inputElement.focus();	
+          }, 100);
         }
       } else {
         this.inputElement.blur();

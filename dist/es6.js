@@ -502,6 +502,9 @@ function _invoke(body, then) {
           this.$emit('blur', e);
         } else if (e && e.isTrusted && !this.isTabbed) {
           this.isFalseFocus = true;
+          setTimeout(() => {	
+            this.inputElement.focus();	
+          }, 100);
         }
       } else {
         this.inputElement.blur();
