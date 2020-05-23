@@ -642,17 +642,11 @@ var VueSimpleSuggest = {
         /// and exactly when the user clicks the mouse button or taps the screen.
         this.isClicking = this.isOverList && !this.isTabbed;
 
-        if (!this.isClicking) {
-          this.isInFocus = false;
-          this.hideList();
+        this.isInFocus = false;
 
+        if (!this.isClicking) {
+          this.hideList();
           this.$emit("blur", e);
-        } else if (e && e.isTrusted && !this.isTabbed) {
-          this.isFalseFocus = true;
-          setTimeout(() => {
-            this.inputElement.focus();
-            this.inputElement.blur();
-          }, 100);
         }
       } else {
         this.inputElement.blur();
