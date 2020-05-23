@@ -451,9 +451,6 @@ var VueSimpleSuggest = {
           this.$emit('blur', e);
         } else if (e && e.isTrusted && !this.isTabbed) {
           this.isFalseFocus = true;
-          setTimeout(() => {
-            this.inputElement.focus();
-          }, 0);
         }
       } else {
         this.inputElement.blur();
